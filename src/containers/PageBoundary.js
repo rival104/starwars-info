@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 class PageBoundary extends Component {
-  constructor(props) {
-    super(props);
-
-  }
   render() {
     if(this.props.peopleList.length === 0){
       return (
         <div>
           <h1>Search the entire list?</h1>
+          <button type="button" className="btn btn-info" onClick={this.props.query}>
+            Submit
+          </button>
         </div>
       );
     }

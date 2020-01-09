@@ -12,11 +12,11 @@ class App extends Component {
     super(props);
 
     this.state = {
+      url: "https://swapi.co/api/people/?page=",
       peoples: [],
       searchfield: "",
       count: 0,
-      activePage: 1,
-      pageNumber: 1
+      activePage: 1
     };
   }
 
@@ -28,8 +28,8 @@ class App extends Component {
   };
 
   componentDidMount() {
-    let url = `https://swapi.co/api/people/?page=${this.state.pageNumber}`;
-
+    const url = this.state.url + this.state.activePage;
+    console.log(url);
     fetch(url)
       .then(response => response.json())
       .then(peoples => {
@@ -40,7 +40,7 @@ class App extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (this.state.activePage !== prevState.activePage) {
-      let url = `https://swapi.co/api/people/?page=${this.state.activePage}`;
+      const url = this.state.url + this.state.activePage;
       fetch(url)
         .then(response => response.json())
         .then(peoples => {
@@ -51,6 +51,18 @@ class App extends Component {
 
   onSearchChange = event => {
     this.setState({ searchfield: event.target.value });
+  };
+
+  queryPeople = () => {
+    // console.log(`query: ${this.state.searchfield}`);
+    const url = `https://swapi.co/api/people/?search=${this.state.searchfield}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(peoples => {
+        this.setState({ peoples: peoples.results });
+        this.setState({ count: peoples.count });
+      });
   };
 
   render() {
@@ -64,7 +76,11 @@ class App extends Component {
       <Fragment>
         <div className="tc">
           <h1 className="f1">Star Wars</h1>
-          <SearchBox searchChange={this.onSearchChange} />
+          
+          <SearchBox
+            searchChange={this.onSearchChange}
+            query={this.queryPeople}
+          />
           <Pagination
             currentPage={this.state.activePage}
             totalSize={this.state.count}
@@ -72,7 +88,7 @@ class App extends Component {
             changeCurrentPage={this.changeCurrentPage}
             theme="dark"
           />
-          <PageBoundary peopleList={filterPoeple}>
+          <PageBoundary peopleList={filterPoeple} query={this.queryPeople}>
             <PeopleCardList peopleList={filterPoeple} />
           </PageBoundary>
         </div>

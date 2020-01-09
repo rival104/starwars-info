@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const SearchBox = ({searchChange}) => {
+const SearchBox = ({searchChange, query}) => {
   return (
     <div className="pa2">
       <input
@@ -10,6 +10,9 @@ const SearchBox = ({searchChange}) => {
         placeholder="search peoples"
         onChange={searchChange}
       />
+      <button type="button" className="pa3" onClick={query}>
+        Search Entire List
+      </button>
     </div>
   );
 };

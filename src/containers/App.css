@@ -17,6 +17,10 @@ h1 {
   color: #dadd33
 }
 
+h2 {
+  color: black;
+}
+
 .bg-light-green-gradient {
   background-image: linear-gradient(to top, #dbdcd7 0%, #dddcd7 24%, #e2c9cc 30%, #e7627d 46%, #b8235a 59%, #801357 71%, #3d1635 84%, #1c1a27 100%);
 }
