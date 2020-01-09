@@ -2,9 +2,6 @@ import React from 'react';
 import PeopleCard from "../components/PeopleCard";
 
 const PeopleCardList = ({peopleList}) => {
-   if (!peopleList.length) {
-     return <h1 className="tc"> Loading... </h1>;
-   }
 
   const list = peopleList.map((people, i) => {
     return(
