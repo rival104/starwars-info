@@ -15,20 +15,17 @@ class PeopleCardDetail extends Component {
   }
 
   componentDidMount() {
-    const { url } = this.state;
+    const url = this.props.person.url;
 
-    fetch(url)
-      .then(response => response.json())
-      .then(peoples => {
-        this.setState({ currentDetail: peoples, peopleDetail: peoples });
-        console.log(peoples);
-      });
+    this.setState({
+      currentDetail: this.props.person,
+      peopleDetail: this.props.person
+    });
 
     fetch(url+"?format=wookiee")
       .then(response => response.json())
       .then(peoples => {
         this.setState({ wookieDetail: peoples });
-        console.log(peoples);
       });
   }
 
@@ -54,7 +51,7 @@ class PeopleCardDetail extends Component {
   };
 
   render() {
-    const { url, name } = this.props;
+    const { url, name } = this.props.person;
 
     // const {
     //   height,

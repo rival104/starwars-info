@@ -15,8 +15,7 @@ class App extends Component {
     this.state = {
       url: "https://swapi.co/api/people/?page=",
       peoples: [],
-      pDetail: "",
-      name: "",
+      person: null,
       searchfield: "",
       count: 0,
       activePage: 1
@@ -79,16 +78,16 @@ class App extends Component {
       });
   };
 
-  showMore = (url, name) => {
-    this.setState({ pDetail: url, name: name});
+  showMore = person => {
+    this.setState({ person: person });
   };
 
   hideMore = () => {
-    this.setState({ pDetail: "" });
+    this.setState({ person: null });
   };
 
   render() {
-    const { peoples, searchfield, pDetail, name } = this.state;
+    const { peoples, searchfield, person } = this.state;
 
     const filterPoeple = peoples.filter(people => {
       return people.name.toLowerCase().includes(searchfield.toLowerCase());
@@ -112,8 +111,7 @@ class App extends Component {
           <PageBoundary
             peopleList={filterPoeple}
             query={this.queryPeople}
-            url={pDetail}
-            name={name}
+            person={person}
             hideMore={this.hideMore}
           >
             <PeopleCardList

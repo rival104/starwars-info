@@ -7,10 +7,7 @@ const PeopleCardList = ({peopleList, showMore}) => {
     return (
         <PeopleCard
           key={i}
-          name={people.name}
-          birth_year={people.birth_year}
-          height={people.height}
-          url={people.url}
+          person={people}
           showMore={showMore}
         />
     );

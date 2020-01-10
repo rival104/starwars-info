@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PeopleCardDetail from '../components/PeopleCardDetail';
+import React, { Component } from "react";
+import PeopleCardDetail from "../components/PeopleCardDetail";
 
 class PageBoundary extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class PageBoundary extends Component {
     if (this.state.hasError) {
       return <h1> Ooops! Something went wrong </h1>;
     }
-    //show propmt to do query on api list
+    //show prompt to do query on api list
     if (this.props.peopleList.length === 0) {
       return (
         <div>
@@ -34,11 +34,14 @@ class PageBoundary extends Component {
       );
     }
     //show details when more clicked
-     if (this.props.url.length > 0) {
-       return (
-         <PeopleCardDetail url={this.props.url} name={this.props.name} hideMore={this.props.hideMore}/>
-       );
-     }
+    if (this.props.person) {
+      return (
+        <PeopleCardDetail
+          hideMore={this.props.hideMore}
+          person={this.props.person}
+        />
+      );
+    }
     //default list
     return this.props.children;
   }
