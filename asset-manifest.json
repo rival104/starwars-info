@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/starwar-info/static/css/main.ce076ee8.chunk.css",
+    "main.js": "/starwar-info/static/js/main.c71ad8bf.chunk.js",
+    "main.js.map": "/starwar-info/static/js/main.c71ad8bf.chunk.js.map",
+    "runtime-main.js": "/starwar-info/static/js/runtime-main.a1a0f41b.js",
+    "runtime-main.js.map": "/starwar-info/static/js/runtime-main.a1a0f41b.js.map",
+    "static/css/2.257bd785.chunk.css": "/starwar-info/static/css/2.257bd785.chunk.css",
+    "static/js/2.558b0f3d.chunk.js": "/starwar-info/static/js/2.558b0f3d.chunk.js",
+    "static/js/2.558b0f3d.chunk.js.map": "/starwar-info/static/js/2.558b0f3d.chunk.js.map",
+    "index.html": "/starwar-info/index.html",
+    "precache-manifest.3fc59def133031348aa0536ef14d5f5c.js": "/starwar-info/precache-manifest.3fc59def133031348aa0536ef14d5f5c.js",
+    "service-worker.js": "/starwar-info/service-worker.js",
+    "static/css/2.257bd785.chunk.css.map": "/starwar-info/static/css/2.257bd785.chunk.css.map",
+    "static/css/main.ce076ee8.chunk.css.map": "/starwar-info/static/css/main.ce076ee8.chunk.css.map",
+    "static/js/2.558b0f3d.chunk.js.LICENSE": "/starwar-info/static/js/2.558b0f3d.chunk.js.LICENSE",
+    "static/media/App.css": "/starwar-info/static/media/Starjout.f72f509a.ttf",
+    "static/media/wookie_sound.mp3": "/starwar-info/static/media/wookie_sound.6540a7ca.mp3"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1a0f41b.js",
+    "static/css/2.257bd785.chunk.css",
+    "static/js/2.558b0f3d.chunk.js",
+    "static/css/main.ce076ee8.chunk.css",
+    "static/js/main.c71ad8bf.chunk.js"
+  ]
+}
